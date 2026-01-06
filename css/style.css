@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2l0ZDJjOWN6dDFub2p3NGFzem52cTF6Mjl3bjZtazMyMmVjdnFzNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XN8pBJ6HrLTOM/giphy.gif");
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    z-index: 10;
+    position: relative;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.glow {
+    font-size: 4rem;
+    text-shadow: 0 0 20px #00e0ff;
+}
+
+.subtitle {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    color: #fff;
+}
+
+.btn {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: #00e0ff;
+    color: #000;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content {
+    padding: 80px 10%;
+    color: #fff;
+}
+
+.center {
+    text-align: center;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s;
+    color: #fff;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.big-text {
+    font-size: 1.8rem;
+    margin-top: 20px;
+}
+
+.glow-small {
+    text-shadow: 0 0 15px #ff00ff;
+}
+
+/* ⭐ Star animation */
+.stars {
+   position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+background-image: url("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2l0ZDJjOWN6dDFub2p3NGFzem52cTF6Mjl3bjZtazMyMmVjdnFzNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XN8pBJ6HrLTOM/giphy.gif");    
+background-size: cover;
+    background-position: center;
+    z-index: -2;
+
+}
+
+@keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: 10000px 5000px; }
+}
+
+/* 🌈 Gradient background */
+.gradient-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3o5ODR2bzJocmFkZDI0b2FmOHo2eDg2czA0Nmd0eGNrc2Y5d2RlOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yPzJdJ11dAkgbYbjsi/giphy.gif");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+@keyframes gradientMove {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+/* ================= INTRO OVERLAY ================= */
+#intro {
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 9999;
+}
+
+/* 🚀 Rocket */
+#rocket {
+    position: absolute;
+    bottom: -220px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    animation: launch 4s ease-in forwards;
+}
+
+@keyframes launch {
+    to { bottom: 65%; }
+}
+
+/* 🎆 Firework */
+#firework {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.3);
+    width: 320px;
+    opacity: 0;
+}
+
+/* ✨ Text */
+#newYearText {
+    position: absolute;
+    top: 58%;
+    width: 100%;
+    text-align: center;
+    font-size: 3.5rem;
+    opacity: 0;
+    transform: scale(0.7);
+    text-shadow: 0 0 30px gold;
+}
+
+/* Hide home initially */
+#homeContent {
+    display: none;
+}
+.wrapper {
+    max-width: 900px;
+    padding: 40px;
+    text-align: center;
+}
+.glow-text {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    color: #ffffff;
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.4),
+        0 0 20px rgba(255,255,255,0.15);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .glow-text {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+}
