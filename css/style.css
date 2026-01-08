@@ -8,7 +8,7 @@
 
 /* ================= BODY ================= */
 body {
-    min-height: 100vh;
+    min-height: 100svh;
     background-image: url("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2l0ZDJjOWN6dDFub2p3NGFzem52cTF6Mjl3bjZtazMyMmVjdnFzNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XN8pBJ6HrLTOM/giphy.gif");
     background-size: cover;
     background-position: center;
@@ -22,7 +22,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.5);
     z-index: -1;
 }
 
@@ -30,16 +30,18 @@ body::before {
 nav {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 20px;
+    gap: clamp(12px, 4vw, 30px);
+    padding: 18px;
     position: relative;
     z-index: 10;
+    flex-wrap: wrap;
 }
 
 nav a {
     color: #aaa;
     text-decoration: none;
     font-weight: 500;
+    font-size: clamp(0.9rem, 3.8vw, 1rem);
 }
 
 nav a:hover {
@@ -48,8 +50,8 @@ nav a:hover {
 
 /* ================= HERO ================= */
 .hero {
-    min-height: 80vh;
-    padding: 0 16px;
+    min-height: 70svh;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,30 +59,34 @@ nav a:hover {
     text-align: center;
 }
 
+/* Main heading */
 .glow {
-    font-size: 4rem;
+    font-size: clamp(2.2rem, 8vw, 4rem);
     text-shadow: 0 0 20px #00e0ff;
 }
 
+/* Subtitle */
 .subtitle {
-    margin-top: 15px;
-    font-size: 1.2rem;
+    margin-top: 12px;
+    font-size: clamp(1rem, 4.5vw, 1.2rem);
     opacity: 0.85;
 }
 
+/* Button */
 .btn {
-    margin-top: 30px;
+    margin-top: 28px;
     padding: 12px 30px;
     background: #00e0ff;
     color: #000;
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
+    font-size: clamp(0.95rem, 4vw, 1.05rem);
 }
 
 /* ================= CONTENT ================= */
 .content {
-    padding: 80px 10%;
+    padding: clamp(50px, 8vw, 80px) clamp(20px, 8vw, 10%);
 }
 
 .center {
@@ -89,7 +95,7 @@ nav a:hover {
 
 .card {
     background: rgba(255,255,255,0.08);
-    padding: 25px;
+    padding: clamp(18px, 4vw, 25px);
     border-radius: 15px;
     margin: 20px 0;
     backdrop-filter: blur(10px);
@@ -101,7 +107,7 @@ nav a:hover {
 }
 
 .big-text {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
     margin-top: 20px;
 }
 
@@ -123,7 +129,7 @@ nav a:hover {
     bottom: -220px;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
+    width: clamp(80px, 18vw, 120px);
     animation: launch 4s ease-in forwards;
 }
 
@@ -137,20 +143,21 @@ nav a:hover {
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.3);
-    width: 320px;
+    width: clamp(200px, 40vw, 320px);
     opacity: 0;
 }
 
-/* ✨ Text */
+/* ✨ Intro Text */
 #newYearText {
     position: absolute;
     top: 58%;
     width: 100%;
     text-align: center;
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 7vw, 3.5rem);
     opacity: 0;
     transform: scale(0.7);
     text-shadow: 0 0 30px gold;
+    padding: 0 14px;
 }
 
 /* ================= HOME HIDDEN INITIALLY ================= */
@@ -161,63 +168,30 @@ nav a:hover {
 /* ================= 🤍 GENTLE PAGE ================= */
 .wrapper {
     max-width: 900px;
-    padding: 40px;
     margin: auto;
+    padding: clamp(28px, 6vw, 40px);
     text-align: center;
     position: relative;
     z-index: 2;
 }
 
+/* Gentle text — MOBILE FIRST */
 .glow-text {
-    font-size: 1.4rem;
-    line-height: 2.2rem;
+    font-size: clamp(1.15rem, 4.8vw, 1.45rem);
+    line-height: 1.9;
     text-shadow:
         0 0 6px rgba(255,255,255,0.6),
-        0 0 14px rgba(255,255,255,0.5),
-        0 0 28px rgba(255,255,255,0.35);
+        0 0 14px rgba(255,255,255,0.4);
 }
 
-/* ================= RESPONSIVE (PHONE FIX) ================= */
-@media (max-width: 600px) {
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 360px) {
 
-    nav {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .glow {
-        font-size: 2.2rem;
-    }
-
-    .subtitle {
-        font-size: 1rem;
+    .hero {
+        min-height: 65svh;
     }
 
     .btn {
-        padding: 10px 24px;
-        font-size: 0.95rem;
-    }
-
-    #rocket {
-        width: 80px;
-    }
-
-    #firework {
-        width: 220px;
-    }
-
-    #newYearText {
-        font-size: 2rem;
-        top: 60%;
-        padding: 0 10px;
-    }
-
-    .wrapper {
-        padding: 24px 16px;
-    }
-
-    .glow-text {
-        font-size: 1.1rem;
-        line-height: 1.9rem;
+        padding: 10px 22px;
     }
 }
