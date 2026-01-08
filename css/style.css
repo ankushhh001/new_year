@@ -1,3 +1,4 @@
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
@@ -5,25 +6,34 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* ================= BODY ================= */
 body {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    min-height: 100vh;
     background-image: url("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2l0ZDJjOWN6dDFub2p3NGFzem52cTF6Mjl3bjZtazMyMmVjdnFzNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XN8pBJ6HrLTOM/giphy.gif");
     background-size: cover;
     background-position: center;
-    z-index: 0;
+    background-attachment: fixed;
+    color: #fff;
+    overflow-x: hidden;
 }
 
+/* Dark overlay for readability */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: -1;
+}
+
+/* ================= NAV ================= */
 nav {
     display: flex;
     justify-content: center;
     gap: 30px;
     padding: 20px;
-    z-index: 10;
     position: relative;
+    z-index: 10;
 }
 
 nav a {
@@ -36,8 +46,10 @@ nav a:hover {
     color: #fff;
 }
 
+/* ================= HERO ================= */
 .hero {
-    height: 80vh;
+    min-height: 80vh;
+    padding: 0 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,8 +65,7 @@ nav a:hover {
 .subtitle {
     margin-top: 15px;
     font-size: 1.2rem;
-    opacity: 0.8;
-    color: #fff;
+    opacity: 0.85;
 }
 
 .btn {
@@ -67,9 +78,9 @@ nav a:hover {
     font-weight: bold;
 }
 
+/* ================= CONTENT ================= */
 .content {
     padding: 80px 10%;
-    color: #fff;
 }
 
 .center {
@@ -77,13 +88,12 @@ nav a:hover {
 }
 
 .card {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.08);
     padding: 25px;
     border-radius: 15px;
     margin: 20px 0;
     backdrop-filter: blur(10px);
     transition: transform 0.3s;
-    color: #fff;
 }
 
 .card:hover {
@@ -99,42 +109,6 @@ nav a:hover {
     text-shadow: 0 0 15px #ff00ff;
 }
 
-/* ⭐ Star animation */
-.stars {
-   position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-background-image: url("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2l0ZDJjOWN6dDFub2p3NGFzem52cTF6Mjl3bjZtazMyMmVjdnFzNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XN8pBJ6HrLTOM/giphy.gif");    
-background-size: cover;
-    background-position: center;
-    z-index: -2;
-
-}
-
-@keyframes moveStars {
-    from { background-position: 0 0; }
-    to { background-position: 10000px 5000px; }
-}
-
-/* 🌈 Gradient background */
-.gradient-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3o5ODR2bzJocmFkZDI0b2FmOHo2eDg2czA0Nmd0eGNrc2Y5d2RlOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yPzJdJ11dAkgbYbjsi/giphy.gif");
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-}
-
-@keyframes gradientMove {
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
-}
 /* ================= INTRO OVERLAY ================= */
 #intro {
     position: fixed;
@@ -179,39 +153,71 @@ background-size: cover;
     text-shadow: 0 0 30px gold;
 }
 
-/* Hide home initially */
+/* ================= HOME HIDDEN INITIALLY ================= */
 #homeContent {
     display: none;
 }
+
+/* ================= 🤍 GENTLE PAGE ================= */
 .wrapper {
     max-width: 900px;
     padding: 40px;
-    text-align: center;
     margin: auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .glow-text {
     font-size: 1.4rem;
     line-height: 2.2rem;
-    color: #ffffff;
     text-shadow:
-        0 0 8px rgba(255,255,255,0.4),
-        0 0 20px rgba(255,255,255,0.15);
+        0 0 6px rgba(255,255,255,0.6),
+        0 0 14px rgba(255,255,255,0.5),
+        0 0 28px rgba(255,255,255,0.35);
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE (PHONE FIX) ================= */
 @media (max-width: 600px) {
 
-    .glow {
-        font-size: 2.5rem;
+    nav {
+        flex-wrap: wrap;
+        gap: 15px;
     }
 
-    #newYearText {
+    .glow {
         font-size: 2.2rem;
     }
 
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 10px 24px;
+        font-size: 0.95rem;
+    }
+
+    #rocket {
+        width: 80px;
+    }
+
+    #firework {
+        width: 220px;
+    }
+
+    #newYearText {
+        font-size: 2rem;
+        top: 60%;
+        padding: 0 10px;
+    }
+
+    .wrapper {
+        padding: 24px 16px;
+    }
+
     .glow-text {
-        font-size: 1.2rem;
-        line-height: 2rem;
+        font-size: 1.1rem;
+        line-height: 1.9rem;
     }
 }
