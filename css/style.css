@@ -187,7 +187,9 @@ background-size: cover;
     max-width: 900px;
     padding: 40px;
     text-align: center;
+    margin: auto;
 }
+
 .glow-text {
     font-size: 1.4rem;
     line-height: 2.2rem;
@@ -197,8 +199,17 @@ background-size: cover;
         0 0 20px rgba(255,255,255,0.15);
 }
 
-/* Responsive */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 600px) {
+
+    .glow {
+        font-size: 2.5rem;
+    }
+
+    #newYearText {
+        font-size: 2.2rem;
+    }
+
     .glow-text {
         font-size: 1.2rem;
         line-height: 2rem;
